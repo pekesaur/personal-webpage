@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgardo Ricci</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="icon" type="image/x-icon" href="pekesaur.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Catppuccin Mocha palette
+                        base: '#1e1e2e',
+                        mantle: '#181825',
+                        crust: '#11111b',
+                        text: '#cdd6f4',
+                        subtext1: '#bac2de',
+                        subtext0: '#a6adc8',
+                        overlay2: '#9399b2',
+                        overlay1: '#7f849c',
+                        overlay0: '#6c7086',
+                        surface2: '#585b70',
+                        surface1: '#45475a',
+                        surface0: '#313244',
+                        blue: '#89b4fa',
+                        lavender: '#b4befe',
+                        sapphire: '#74c7ec',
+                        sky: '#89dceb',
+                        teal: '#94e2d5',
+                        green: '#a6e3a1',
+                        yellow: '#f9e2af',
+                        peach: '#fab387',
+                        maroon: '#eba0ac',
+                        red: '#f38ba8',
+                        mauve: '#cba6f7',
+                        pink: '#f5c2e7',
+                        flamingo: '#f2cdcd',
+                        rosewater: '#f5e0dc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes terminal-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .terminal-cursor {
+            animation: terminal-blink 1s step-end infinite;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 5px rgba(203, 166, 247, 0.5);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #cba6f7;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #cba6f7; }
+        }
+    </style>
+</head>
+<body class="bg-base text-text min-h-screen font-mono">
+    <!-- Terminal-style navbar -->
+    <nav class="bg-surface0 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-peach font-bold">$</span>
+                <span class="text-blue">edgardo_ricci</span>
+                <span class="text-green">--portfolio</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-subtext1 hover:text-lavender transition">acerca_de.edgardo</a>
+                <a href="#skills" class="text-subtext1 hover:text-lavender transition">habilidades</a>
+                <a href="#projects" class="text-subtext1 hover:text-lavender transition">proyectos</a>
+                <a href="#contact" class="text-subtext1 hover:text-lavender transition">contacto</a>
+            </div>
+            <button class="md:hidden text-subtext1">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-mantle to-crust">
+        <div class="container mx-auto px-4 py-20 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 glow-text">
+                    <!-- <span class="text-peach">#!</span>
+                    <span class="text-blue">/bin/</span>
+                    <span class="text-green">sysadmin</span> -->
+                    <!-- <span class="text-peach">edgardo</span>
+                    <span class="text-blue">@</span> -->
+                    <span class="text-green">edgardo@portfolio:~$</span>
+                </h1>
+                <div class="typewriter text-2xl md:text-3xl mb-8">
+                    <span class="text-subtext1">[</span>
+                    <span class="text-lavender font-bold">root@portfolio</span>
+                    <span class="text-subtext1">]</span>
+                    <span class="text-green">$</span>
+                    <span class="text-peach"> whoami</span>
+                </div>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="bg-mauve hover:bg-mauve/90 text-base px-6 py-3 rounded-lg font-bold transition">
+                        <i class="fas fa-terminal mr-2"></i> Contact Me
+                    </a>
+                    <a href="#projects" class="bg-surface0 hover:bg-surface1 text-subtext1 px-6 py-3 rounded-lg font-bold transition">
+                        <i class="fas fa-code mr-2"></i> View Projects
+                    </a>
+                </div>
+                <div class="mt-12 text-overlay1">
+                    <p class="mb-2">$ neofetch --stdout</p>
+                    <div class="bg-surface0 p-4 rounded-lg text-left max-w-md mx-auto">
+                        <p><span class="text-peach">OS:</span> Arch Linux</p>
+                        <p><span class="text-peach">Kernel:</span> x86_64 Linux 6.5.0-arch</p>
+                        <p><span class="text-peach">WM:</span> i3 gaps</p>
+                        <p><span class="text-peach">Terminal:</span> alacritty + tmux</p>
+                        <p><span class="text-peach">Shell:</span> zsh with oh-my-zsh</p>
+                        <p><span class="text-peach">Languages:</span> Python, Go, Bash</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-surface0">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="text-blue">acerca_de</span>
+                <span class="text-yellow">.</span>
+                <span class="text-green">txt</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 rounded-full bg-gradient-to-br from-mauve to-blue p-1">
+                            <!-- <img src="https://placehold.co/256x256/1e1e2e/cdd6f4?text=:3" alt="Profile" class="w-full h-full rounded-full object-cover border-4 border-base"> -->
+                            <img src="profile.png" alt="Profile" class="w-full h-full rounded-full object-cover border-4 border-base">
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 bg-surface1 px-4 py-2 rounded-full">
+                            <span class="text-peach">feh profile.png</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3">
+                    <div class="bg-surface1 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-lavender">
+                            <span class="text-green">[</span>
+                            <span class="text-blue">root@portfolio</span>
+                            <span class="text-green">]</span>
+                            <span class="text-peach">$</span>
+                            <span class="text-yellow"> cat acerca_de.txt</span>
+                        </h3>
+                        <p class="mb-4 text-subtext1">
+Soy un ingeniero electrónico especializado en integración de sistemas, infraestructura Linux y soluciones Edge Computing. Experiencia en el diseño, despliegue y administración de plataformas basadas en Linux, contenedores Docker y herramientas de observabilidad como Grafana y Prometheus. Amplios conocimientos en redes, automatización, servicios de infraestructura y tecnologías IoT para aplicaciones industriales y de seguridad.                        </p>
+                        <p class="mb-4 text-subtext1">
+                            Mi perfil combina el diseño electrónico y el desarrollo de sistemas embebidos con la capacidad de construir y operar infraestructuras completas, integrando hardware, software y redes en soluciones robustas y escalables. Como docente universitario, complemento esta experiencia con una sólida capacidad para documentar procesos, comunicar conceptos técnicos y facilitar la transferencia de conocimiento dentro de equipos multidisciplinarios.    
+                        </p>
+                        <div class="mt-6">
+                            <div class="flex items-center mb-2">
+                                <span class="w-32 text-peach">$ uptime</span>
+                                <span class="text-subtext0">18:02:14 up 39 years, 357 days, 10:02, 1 user, load average: 0.42, 0.17, 0.86</span>
+                            </div>
+                            <!-- <div class="flex items-center">
+                                <span class="w-32 text-peach">$ echo $EDITOR</span>
+                                <span class="text-subtext0">/usr/bin/nvim</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-mantle">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="text-peach">:</span>
+                <span class="text-blue">set</span>
+                <span class="text-yellow"> skill</span>
+                <span class="text-green">=</span>
+                <span class="text-mauve">(</span>
+                <span class="text-peach">sysadmin</span>
+                <span class="text-mauve">)</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Linux Card -->
+                <div class="bg-surface0 rounded-lg p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue/20 flex items-center justify-center mr-4">
+                            <i class="fab fa-linux text-2xl text-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lavender">Linux Administration</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">RHCSA Certified</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">Systemd & init systems</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">Performance tuning</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">Security hardening</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- DevOps Card -->
+                <div class="bg-surface0 rounded-lg p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-teal/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-infinity text-2xl text-teal"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lavender">DevOps & Cloud</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">Terraform & Ansible</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">AWS & GCP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">Kubernetes & Docker</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">CI/CD Pipelines</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Development Card -->
+                <div class="bg-surface0 rounded-lg p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-2xl text-red"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lavender">Development</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">Python (3+ years)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">Go (2+ years)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-green mr-2"></span>
+                            <span class="text-subtext1">Bash scripting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-4 h-4 rounded-full bg-yellow mr-2"></span>
+                            <span class="text-subtext1">Rust (learning)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-surface0 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-lavender">
+                    <span class="text-blue">$</span> 
+                    <span class="text-peach">sysadmin</span> 
+                    <span class="text-green">--show-skills</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Skill bars -->
+                    <div>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-subtext1">Linux Administration</span>
+                                <span class="text-subtext0">95%</span>
+                            </div>
+                            <div class="w-full bg-surface2 rounded-full h-2.5">
+                                <div class="bg-blue h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-subtext1">Python</span>
+                                <span class="text-subtext0">90%</span>
+                            </div>
+                            <div class="w-full bg-surface2 rounded-full h-2.5">
+                                <div class="bg-teal h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-subtext1">Go</span>
+                                <span class="text-subtext0">85%</span>
+                            </div>
+                            <div class="w-full bg-surface2 rounded-full h-2.5">
+                                <div class="bg-peach h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-subtext1">Kubernetes</span>
+                                <span class="text-subtext0">88%</span>
+                            </div>
+                            <div class="w-full bg-surface2 rounded-full h-2.5">
+                                <div class="bg-mauve h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-subtext1">Ansible</span>
+                                <span class="text-subtext0">92%</span>
+                            </div>
+                            <div class="w-full bg-surface2 rounded-full h-2.5">
+                                <div class="bg-sapphire h-2.5 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-subtext1">Bash</span>
+                                <span class="text-subtext0">94%</span>
+                            </div>
+                            <div class="w-full bg-surface2 rounded-full h-2.5">
+                                <div class="bg-green h-2.5 rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-surface0">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="text-yellow">ls</span>
+                <span class="text-blue"> -la</span>
+                <span class="text-green"> ~/projects/</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-surface1 rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-r from-mauve to-blue flex items-center justify-center">
+                        <i class="fas fa-server text-6xl text-base"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-lavender">Kubernetes Operator</h3>
+                            <span class="bg-blue/20 text-blue text-xs px-2 py-1 rounded">Go</span>
+                        </div>
+                        <p class="text-subtext1 mb-4">A custom Kubernetes operator written in Go for automating complex deployments on our production clusters.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">Go</span>
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">Kubernetes</span>
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">Operators</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue hover:text-blue/80">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-peach hover:text-peach/80">
+                                <i class="fas fa-book"></i> Docs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-surface1 rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-r from-teal to-sapphire flex items-center justify-center">
+                        <i class="fas fa-terminal text-6xl text-base"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-lavender">Linux Hardening</h3>
+                            <span class="bg-green/20 text-green text-xs px-2 py-1 rounded">Bash</span>
+                        </div>
+                        <p class="text-subtext1 mb-4">Bash scripts for automated hardening of Linux servers following CIS benchmarks and organizational policies.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">Bash</span>
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">Security</span>
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">Automation</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue hover:text-blue/80">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-peach hover:text-peach/80">
+                                <i class="fas fa-shield-alt"></i> CIS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-surface1 rounded-lg overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-r from-peach to-red flex items-center justify-center">
+                        <i class="fab fa-python text-6xl text-base"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-lavender">Infra CLI Tool</h3>
+                            <span class="bg-yellow/20 text-yellow text-xs px-2 py-1 rounded">Python</span>
+                        </div>
+                        <p class="text-subtext1 mb-4">A CLI utility for managing cloud infrastructure with plugins for AWS, GCP, and bare metal servers.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">Click</span>
+                            <span class="bg-surface2 text-xs px-2 py-1 rounded">AWS/GCP</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue hover:text-blue/80">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="text-peach hover:text-peach/80">
+                                <i class="fas fa-download"></i> PyPI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center bg-surface1 hover:bg-surface2 text-subtext1 px-6 py-3 rounded-lg font-bold transition">
+                    <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-mantle">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="text-peach">echo</span>
+                <span class="text-yellow"> $INFORMACION_CONTACTO</span>
+                <span class="text-green"> ></span>
+                <span class="text-blue"> contacto.txt</span>
+            </h2>
+            
+            <div class="max-w-3xl mx-auto bg-surface0 rounded-lg p-8 shadow-lg">
+                <form class="space-y-6">
+                    <!-- <div>
+                        <label for="name" class="block text-subtext1 mb-2">$ NAME="</label>
+                        <input type="text" id="name" class="w-full bg-surface1 border border-surface2 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent text-subtext1" placeholder="Your Name">
+                        <span class="text-subtext1">"</span>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-subtext1 mb-2">$ EMAIL="</label>
+                        <input type="email" id="email" class="w-full bg-surface1 border border-surface2 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent text-subtext1" placeholder="your@email.com">
+                        <span class="text-subtext1">"</span>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-subtext1 mb-2">$ SUBJECT="</label>
+                        <input type="text" id="subject" class="w-full bg-surface1 border border-surface2 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent text-subtext1" placeholder="Subject">
+                        <span class="text-subtext1">"</span>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-subtext1 mb-2">$ MESSAGE=EOF</label>
+                        <textarea id="message" rows="5" class="w-full bg-surface1 border border-surface2 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent text-subtext1" placeholder="Your message here..."></textarea>
+                        <span class="text-subtext1">EOF</span>
+                    </div> -->
+                    <!-- <div class="pt-2">
+                        <button type="submit" class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> ./send_message.sh
+                        </button>  
+                    </div> -->
+                    <div>
+                        <a  href="https://www.linkedin.com/in/ricciedgardo/" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fab fa-linkedin-in mr-2"></i> Linkedin
+                        </a>
+                    </div>
+                    <div>
+                        <a  href="mailto:edgarricci@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full bg-red hover:bg-red/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2" ></i> edgarricci@gmail.com
+                        </a>
+                    </div>
+                    <!-- <div>
+                        <button type="submit" class="w-full bg-red hover:bg-red/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2" ></i> Email
+                        </button>  
+                    </div> -->
+                    <div>
+                        <a  href="https://wa.me/5492215907490" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full bg-green hover:bg-green/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp mr-2" ></i> Whatsapp
+                        </a>
+                    </div>
+                    
+                     <div>
+                        <a  href="https://t.me/edgardoricci" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fab fa-telegram-plane mr-2" ></i> Telegram
+                        </a>   
+
+                    <!-- <div>
+                        <button type="submit" class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2" ></i> Telegram
+                        </button>  
+                    </div> -->
+                </form>
+                
+                <!-- <div class="mt-12 pt-8 border-t border-surface2">
+                    <h3 class="text-xl font-bold mb-6 text-center text-lavender">
+                        <span class="text-blue">||</span> 
+                        <span class="text-peach">Connect</span> 
+                        <span class="text-blue">||</span>
+                    </h3>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-blue transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-sapphire transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-red transition">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-peach transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-mauve transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-crust py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <span class="text-peach font-bold mr-2">$</span>
+                        <span class="text-blue">edgardo_ricci </span>
+                        <span class="text-green">--exit</span>
+                    </div>
+                    <p class="text-overlay1 text-sm mt-1">v1.0.0</p>
+                </div>
+                <div class="text-overlay1 text-sm">
+                    <p>© 2026 Edgardo Ricci. Todos los derechos reservados.</p>
+                    <p class="mt-1">Powered by <i class="fas fa-coffee text-peach"></i> and <i class="fas fa-heart text-red"></i></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple terminal typing effect for the hero section
+        document.addEventListener('DOMContentLoaded', function() {
+            const phrases = [
+                "Linux system administrator",
+                "Kubernetes enthusiast",
+                "Python developer",
+                "Go programmer",
+                "Infrastructure as Code fanatic",
+                "Bash scripting wizard"
+            ];
+            let currentPhrase = 0;
+            const element = document.querySelector('.typewriter');
+            
+            function typeNextPhrase() {
+                const phrase = phrases[currentPhrase];
+                element.innerHTML = `<span class="text-subtext1">[</span><span class="text-lavender font-bold">root@portfolio</span><span class="text-subtext1">]</span><span class="text-green">$</span> <span class="text-peach">echo "${phrase}"</span>`;
+                
+                // Reset animation
+                element.style.animation = 'none';
+                element.offsetHeight; // Trigger reflow
+                element.style.animation = 'typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite';
+                
+                currentPhrase = (currentPhrase + 1) % phrases.length;
+                setTimeout(typeNextPhrase, 4000);
+            }
+            
+            // Start the typing effect after initial animation completes
+            setTimeout(typeNextPhrase, 3500);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
