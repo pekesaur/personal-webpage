@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
     <title>Edgardo Ricci</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <link rel="icon" type="image/x-icon" href="pekesaur.png">
+    <link rel="icon" type="image/x-icon" href="pekesaur.png">
     <script>
         tailwind.config = {
             theme: {
@@ -99,15 +98,27 @@
                 <span class="text-blue">edgardo_ricci</span>
                 <span class="text-green">--portfolio</span>
             </div>
+
+            <!-- Navegación Escritorio -->
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-subtext1 hover:text-lavender transition">acerca_de</a>
                 <a href="#skills" class="text-subtext1 hover:text-lavender transition">habilidades</a>
                 <a href="#projects" class="text-subtext1 hover:text-lavender transition">proyectos</a>
                 <a href="#contact" class="text-subtext1 hover:text-lavender transition">contacto</a>
             </div>
-            <button class="md:hidden text-subtext1">
+
+            <!-- Botón de Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-subtext1 focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
             </button>
+        </div>
+
+        <!-- Contenedor del Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface1 px-4 pt-2 pb-4 space-y-2 border-t border-surface2">
+            <a href="#about" class="block text-subtext1 hover:text-lavender py-2 px-3 rounded hover:bg-surface0 transition">acerca_de</a>
+            <a href="#skills" class="block text-subtext1 hover:text-lavender py-2 px-3 rounded hover:bg-surface0 transition">habilidades</a>
+            <a href="#projects" class="block text-subtext1 hover:text-lavender py-2 px-3 rounded hover:bg-surface0 transition">proyectos</a>
+            <a href="#contact" class="block text-subtext1 hover:text-lavender py-2 px-3 rounded hover:bg-surface0 transition">contacto</a>
         </div>
     </nav>
 
@@ -116,12 +127,7 @@
         <div class="container mx-auto px-4 py-20 text-center">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 glow-text">
-                    <!-- <span class="text-peach">#!</span>
-                    <span class="text-blue">/bin/</span>
-                    <span class="text-green">sysadmin</span> -->
-                    <!-- <span class="text-peach">edgardo</span>
-                    <span class="text-blue">@</span> -->
-                    <span class="text-green">edgardo@portfolio:~$</span>
+                    <span class="text-green">edgardo@home:~$</span>
                 </h1>
                 <div class="typewriter text-2xl md:text-3xl mb-8">
                     <span class="text-subtext1">[</span>
@@ -166,7 +172,6 @@
                 <div class="md:w-1/3 flex justify-center">
                     <div class="relative">
                         <div class="w-64 h-64 rounded-full bg-gradient-to-br from-mauve to-blue p-1">
-                            <!-- <img src="https://placehold.co/256x256/1e1e2e/cdd6f4?text=:3" alt="Profile" class="w-full h-full rounded-full object-cover border-4 border-base"> -->
                             <img src="profile.png" alt="Profile" class="w-full h-full rounded-full object-cover border-4 border-base">
                         </div>
                         <div class="absolute -bottom-3 -right-3 bg-surface1 px-4 py-2 rounded-full">
@@ -185,18 +190,15 @@
                             <span class="text-yellow"> cat acerca_de.txt</span>
                         </h3>
                         <p class="mb-4 text-subtext1">
-Soy un ingeniero electrónico especializado en integración de sistemas, infraestructura Linux y soluciones Edge Computing. Experiencia en el diseño, despliegue y administración de plataformas basadas en Linux, contenedores Docker y herramientas de observabilidad como Grafana y Prometheus. Amplios conocimientos en redes, automatización, servicios de infraestructura y tecnologías IoT para aplicaciones industriales y de seguridad.                        </p>
+Soy un ingeniero electrónico especializado en integración de sistemas, infraestructura Linux y soluciones Edge Computing. Experiencia en el diseño, despliegue y administración de plataformas basadas en Linux, contenedores Docker y herramientas de observabilidad como Grafana y Prometheus. Amplios conocimientos en redes, automatización, servicios de infraestructura y tecnologías IoT para aplicaciones industriales y de seguridad.
+                        </p>
                         <p class="mb-4 text-subtext1">
-                            Mi perfil combina el diseño electrónico y el desarrollo de sistemas embebidos con la capacidad de construir y operar infraestructuras completas, integrando hardware, software y redes en soluciones robustas y escalables. Como docente universitario, complemento esta experiencia con una sólida capacidad para documentar procesos, comunicar conceptos técnicos y facilitar la transferencia de conocimiento dentro de equipos multidisciplinarios.    
+Mi perfil combina el diseño electrónico y el desarrollo de sistemas embebidos con la capacidad de construir y operar infraestructuras completas, integrando hardware, software y redes en soluciones robustas y escalables. Como docente universitario, complemento esta experiencia con una sólida capacidad para documentar procesos, comunicar conceptos técnicos y facilitar la transferencia de conocimiento dentro de equipos multidisciplinarios.    
                         </p>
                         <div class="mt-6">
                             <div class="flex items-center mb-2">
                                 <span class="w-32 text-peach">$ uptime</span>
                                 <span class="text-subtext0">18:02:14 up 39 years, 357 days, 10:02, 1 user, load average: 0.42, 0.17, 0.86</span>
-                            </div>
-                            <!-- <div class="flex items-center">
-                                <span class="w-32 text-peach">$ echo $EDITOR</span>
-                                <span class="text-subtext0">/usr/bin/nvim</span> -->
                             </div>
                         </div>
                     </div>
@@ -251,7 +253,6 @@ Soy un ingeniero electrónico especializado en integración de sistemas, infraes
                 <div class="bg-surface0 rounded-lg p-6 card-hover">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full bg-teal/20 flex items-center justify-center mr-4">
-                            <!-- <i class="fas fa-infinity text-2xl text-teal"></i> -->
                             <i class="fa-solid fa-gauge-high text-2xl text-teal"></i>
                         </div>
                         <h3 class="text-xl font-bold text-lavender">Monitoreo & Observabilidad</h3>
@@ -280,7 +281,6 @@ Soy un ingeniero electrónico especializado en integración de sistemas, infraes
                 <div class="bg-surface0 rounded-lg p-6 card-hover">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full bg-red/20 flex items-center justify-center mr-4">
-                            <!-- <i class="fas fa-code text-2xl text-red"></i> -->
                              <i class="fa-solid fa-gears text-2xl text-red"></i>
                         </div>
                         <h3 class="text-xl font-bold text-lavender">Development</h3>
@@ -305,78 +305,6 @@ Soy un ingeniero electrónico especializado en integración de sistemas, infraes
                     </ul>
                 </div>
             </div>
-            
-                
-
-            <!-- <div class="mt-12 bg-surface0 rounded-lg p-6">
-                <h3 class="text-xl font-bold mb-4 text-lavender">
-                    <span class="text-blue">$</span> 
-                    <span class="text-peach">sysadmin</span> 
-                    <span class="text-green">--show-skills</span>
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    Skill bars
-                    <div>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-subtext1">Linux Administration</span>
-                                <span class="text-subtext0">95%</span>
-                            </div>
-                            <div class="w-full bg-surface2 rounded-full h-2.5">
-                                <div class="bg-blue h-2.5 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-subtext1">Python</span>
-                                <span class="text-subtext0">90%</span>
-                            </div>
-                            <div class="w-full bg-surface2 rounded-full h-2.5">
-                                <div class="bg-teal h-2.5 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-subtext1">Go</span>
-                                <span class="text-subtext0">85%</span>
-                            </div>
-                            <div class="w-full bg-surface2 rounded-full h-2.5">
-                                <div class="bg-peach h-2.5 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-subtext1">Kubernetes</span>
-                                <span class="text-subtext0">88%</span>
-                            </div>
-                            <div class="w-full bg-surface2 rounded-full h-2.5">
-                                <div class="bg-mauve h-2.5 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-subtext1">Ansible</span>
-                                <span class="text-subtext0">92%</span>
-                            </div>
-                            <div class="w-full bg-surface2 rounded-full h-2.5">
-                                <div class="bg-sapphire h-2.5 rounded-full" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-subtext1">Bash</span>
-                                <span class="text-subtext0">94%</span>
-                            </div>
-                            <div class="w-full bg-surface2 rounded-full h-2.5">
-                                <div class="bg-green h-2.5 rounded-full" style="width: 94%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --> 
-            
         </div>
     </section>
 
@@ -490,95 +418,31 @@ Soy un ingeniero electrónico especializado en integración de sistemas, infraes
                 <span class="text-blue"> contacto.txt</span>
             </h2>
             
-            <div class="max-w-3xl mx-auto bg-surface0 rounded-lg p-8 shadow-lg">
-                <form class="space-y-6">
-                    <!-- <div>
-                        <label for="name" class="block text-subtext1 mb-2">$ NAME="</label>
-                        <input type="text" id="name" class="w-full bg-surface1 border border-surface2 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent text-subtext1" placeholder="Your Name">
-                        <span class="text-subtext1">"</span>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-subtext1 mb-2">$ EMAIL="</label>
-                        <input type="email" id="email" class="w-full bg-surface1 border border-surface2 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent text-subtext1" placeholder="your@email.com">
-                        <span class="text-subtext1">"</span>
-                    </div>
-                    <div>
-                        <label for="subject" class="block text-subtext1 mb-2">$ SUBJECT="</label>
-                        <input type="text" id="subject" class="w-full bg-surface1 border border-surface2 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent text-subtext1" placeholder="Subject">
-                        <span class="text-subtext1">"</span>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-subtext1 mb-2">$ MESSAGE=EOF</label>
-                        <textarea id="message" rows="5" class="w-full bg-surface1 border border-surface2 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent text-subtext1" placeholder="Your message here..."></textarea>
-                        <span class="text-subtext1">EOF</span>
-                    </div> -->
-                    <!-- <div class="pt-2">
-                        <button type="submit" class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
-                            <i class="fas fa-paper-plane mr-2"></i> ./send_message.sh
-                        </button>  
-                    </div> -->
-                    <div>
-                        <a  href="https://www.linkedin.com/in/ricciedgardo/" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
-                            <i class="fab fa-linkedin-in mr-2"></i> Linkedin
-                        </a>
-                    </div>
-                    <div>
-                        <a  href="mailto:edgarricci@gmail.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="w-full bg-red hover:bg-red/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
-                            <i class="fas fa-envelope mr-2" ></i> edgarricci@gmail.com
-                        </a>
-                    </div>
-                    <!-- <div>
-                        <button type="submit" class="w-full bg-red hover:bg-red/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
-                            <i class="fas fa-envelope mr-2" ></i> Email
-                        </button>  
-                    </div> -->
-                    
-                    
-                     <div>
-                        <a  href="https://t.me/edgardoricci" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
-                            <i class="fab fa-telegram-plane mr-2" ></i> Telegram
-                        </a>   
-
-                    <!-- <div>
-                        <button type="submit" class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
-                            <i class="fas fa-paper-plane mr-2" ></i> Telegram
-                        </button>  
-                    </div> -->
-                </form>
-                
-                <!-- <div class="mt-12 pt-8 border-t border-surface2">
-                    <h3 class="text-xl font-bold mb-6 text-center text-lavender">
-                        <span class="text-blue">||</span> 
-                        <span class="text-peach">Connect</span> 
-                        <span class="text-blue">||</span>
-                    </h3>
-                    <div class="flex justify-center space-x-6">
-                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-blue transition">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-sapphire transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-red transition">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-peach transition">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-surface1 hover:bg-surface2 flex items-center justify-center text-xl text-subtext1 hover:text-mauve transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div> -->
+            <div class="max-w-3xl mx-auto bg-surface0 rounded-lg p-8 shadow-lg space-y-6">
+                <div>
+                    <a href="https://www.linkedin.com/in/ricciedgardo/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                        <i class="fab fa-linkedin-in mr-2"></i> Linkedin
+                    </a>
+                </div>
+                <div>
+                    <a href="mailto:edgarricci@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-full bg-red hover:bg-red/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                        <i class="fas fa-envelope mr-2"></i> edgarricci@gmail.com
+                    </a>
+                </div>
+                <div>
+                    <a href="https://t.me/edgardoricci" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-full bg-blue hover:bg-blue/90 text-base font-bold py-3 px-4 rounded-lg transition flex items-center justify-center">
+                        <i class="fab fa-telegram-plane mr-2"></i> Telegram
+                    </a>   
+                </div>
             </div>
         </div>
     </section>
@@ -596,8 +460,7 @@ Soy un ingeniero electrónico especializado en integración de sistemas, infraes
                     <p class="text-overlay1 text-sm mt-1">v1.0.0</p>
                 </div>
                 <div class="text-overlay1 text-sm">
-                    <!-- <p>© 2026 Edgardo Ricci. Todos los derechos reservados.</p> -->
-                     <p>© <span id="current-year"></span> Edgardo Ricci. Todos los derechos reservados.</p>
+                    <p>© <span id="current-year"></span> Edgardo Ricci. Todos los derechos reservados.</p>
                     <p class="mt-1">Powered by <i class="fas fa-coffee text-peach"></i> and <i class="fas fa-heart text-red"></i></p>
                 </div>
             </div>
@@ -605,8 +468,25 @@ Soy un ingeniero electrónico especializado en integración de sistemas, infraes
     </footer>
 
     <script>
-        // Simple terminal typing effect for the hero section
         document.addEventListener('DOMContentLoaded', function() {
+            // Lógica para desplegar el menú móvil
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Cerrar el menú al pulsar cualquier enlace
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Efecto de mecanografía en el Hero
             const phrases = [
                 "docker compose up -d",
                 "Kubernetes enthusiast",
@@ -622,33 +502,33 @@ Soy un ingeniero electrónico especializado en integración de sistemas, infraes
                 const phrase = phrases[currentPhrase];
                 element.innerHTML = `<span class="text-subtext1">[</span><span class="text-lavender font-bold">root@portfolio</span><span class="text-subtext1">]</span><span class="text-green">$</span> <span class="text-peach">echo "${phrase}"</span>`;
                 
-                // Reset animation
                 element.style.animation = 'none';
-                element.offsetHeight; // Trigger reflow
+                element.offsetHeight; // Refresco de animación
                 element.style.animation = 'typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite';
                 
                 currentPhrase = (currentPhrase + 1) % phrases.length;
                 setTimeout(typeNextPhrase, 4000);
             }
             
-            // Start the typing effect after initial animation completes
             setTimeout(typeNextPhrase, 3500);
             
-            // Smooth scrolling for anchor links
+            // Desplazamiento suave para enlaces de ancla
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
+
+            // Establecer el año actual en el Footer
+            document.getElementById("current-year").textContent = new Date().getFullYear();
         });
     </script>
-
-    <script>
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
-
 </body>
 </html>
